@@ -1,7 +1,22 @@
-import React from 'react'
+import { BrowserRouter,Route,Routes} from "react-router-dom";
+import Home from "./pages/Home";
 
-export default function () {
+import Singout from "./pages/Singout";
+import About from "./pages/About";
+import Profile from "./pages/Profile";
+import SignIn from "./pages/signin";
+
+
+export default function App() {
   return (
-    <div className='bg-red-400 text-red-50'>hello</div>
+   <BrowserRouter>
+   <Routes>
+    <Route path='/' element={<Home/>} />
+    <Route path='/sign-in' element={<SignIn/>} />
+    <Route path='/sign-out' element={<Singout/>} />
+    <Route path='/about' element={<About/>} />
+    <Route path='/profile' element={<Profile/>} />
+   </Routes>
+   </BrowserRouter>
   )
 }
